@@ -62,6 +62,7 @@ function filter(name,value) {
 
 function resetFilters() {
     gridOptions.api.setFilterModel(null);
+    $('#filter-check .form-check-input').prop('checked',false)
 }
 
 function showHide(option) {

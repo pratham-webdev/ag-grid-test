@@ -113,7 +113,8 @@ $('.filter-tab-item').click(function () {
     $(`#${tabId}`).addClass('filter-tab-active');
 });
 
-// if(window.innerWidth < 1200){
+if(window.innerWidth < 1200){
     $('#filter-header').prepend(`<div class="me-3" onclick="showHide('sidepanel-filter')"><img src="img/close.svg"></div>`)
+}
 
 

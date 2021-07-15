@@ -1,0 +1,63 @@
+html,body{
+    height: 100%;
+}
+
+#myGrid{
+    height: 75%;
+    width: 100%;
+}
+
+.ag-row-odd{
+    background-color: white !important;
+}
+
+.sidepanel{
+    display: none;
+    height: 100vh;
+    width: 25vw;
+    position: fixed;
+    top: 0;
+    right:0;
+    background-color: white;
+    z-index:999;
+    box-shadow: -8px 0px 16px rgba(21, 27, 77, 0.1);
+}
+
+.sidepanel .button-section{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: white;
+}
+
+.sidepanel .button-section button{
+    width: 20vw;
+}
+
+
+@media screen and (max-width:1199px) {
+    .sidepanel{
+        width: 100vw;;
+    }
+    .sidepanel .button-section button{
+        width: 80vw;
+    }
+}
+
+.filter-tab-item{
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-tab-item:hover {
+    color:#0d6efd;
+}
+
+.filter-tab-active{
+    color: #0d6efd;
+}

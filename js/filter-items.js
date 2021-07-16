@@ -102,7 +102,7 @@ filterItems.forEach((item) => {
     item.filters.forEach((el) => {
         $(`#filter-check .${item.id}`).append(FilterCheck(el, item.FilterCategory));
     });
-    
+
     item.id == 'filter-1' ? $(`.${item.id}`).show() : $(`.${item.id}`).hide();
 });
 
@@ -116,7 +116,11 @@ $('.filter-tab-item').click(function () {
 });
 
 if(window.innerWidth < 1200){
-    $('#filter-header').prepend(`<div class="me-3" onclick="showHide('sidepanel-filter')"><img src="img/close.svg"></div>`)
+    $('#filter-header').prepend(`<div class="me-3" onclick="showHide('sidepanel-filter')"><img src="img/close.svg"></div>`);
+}
+
+if(window.innerWidth < 1200){
+    $('#main-buttons').append(`<button class="btn btn btn-outline-primary ms-2" onclick="resetFilters()">Clear All</button>`);
 }
 
 

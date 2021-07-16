@@ -46,6 +46,9 @@ html,body{
     .sidepanel .button-section button{
         width: 80vw;
     }
+    #main-buttons{
+        margin-top: 1rem;
+    }
 }
 
 .filter-tab-item{

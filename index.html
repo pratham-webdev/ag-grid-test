@@ -17,16 +17,16 @@
 <body>
     <div id="mainView" class="container h-100">
         <h1 class="py-4">Sales Log</h1>
-        <div class="d-flex align-items-center">
-            <div>
+        <div class="d-flex align-items-center flex-wrap">
+            <div class="me-2">
                 <select class="form-select" onchange="onPageSizeChanged()" id="page-size">
                     <option value="15" selected>15 per page</option>
                     <option value="25">25 per page</option>
                     <option value="50">50 per page</option>
                 </select>
             </div>
-            <div>
-                <button class="btn btn-outline-primary ms-2" onclick="exportCSV()">Export</button>
+            <div id="main-buttons">
+                <button class="btn btn-outline-primary" onclick="exportCSV()">Export</button>
                 <button class="btn btn-outline-primary ms-2 sidepanel-filter"
                     onclick="showHide('sidepanel-filter')">Filters</button>
                 <button class="btn btn-outline-primary ms-2 sidepanel-columns"

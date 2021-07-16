@@ -62,17 +62,31 @@ function filter(name,value) {
 
 function resetFilters() {
     gridOptions.api.setFilterModel(null);
-    $('#filter-check .form-check-input').prop('checked',false)
+    $('#filter-check .form-check-input').prop('checked',false);
 }
 
 function showHide(option) {
-    $(`#${option}`).toggle();
+    // console.log($(`.sidepanel-active`).attr('id'));
+    if(option !== $(`.sidepanel-active`).attr('id')){
+    $(`.sidepanel-active`).hide();
+    $(`.sidepanel-active`).removeClass('sidepanel-active');
+    $(`.button-active`).removeClass(`active button-active`);
+    $(`#${option}`).show();
+    $(`#${option}`).addClass('sidepanel-active');
+    $(`.${option}`).addClass('active button-active');
+    }
+    else{
+    $(`#${option}`).hide();
+    $(`#${option}`).removeClass('sidepanel-active');
+    $(`.button-active`).removeClass(`active button-active`);
+    }
+    
 }
 
 function parseDate(data) {
     return data.value ? (new Date(data.value).toLocaleDateString()) : '';
 }
 
-function parseEligibility(data) {
-    return data.value == false ? "Eligible" : "Not Eligible";
-}
+function exportCSV() {
+    gridOptions.api.exportDataAsCsv({fileName:'sales-log'});
+  }

@@ -50,3 +50,11 @@
 //     FinanceFilter = option;
 //     gridOptions.api.onFilterChanged();
 // }
+
+
+// parsing data ///////////////////
+
+
+// function parseEligibility(data) {
+//     return data.value == false ? "Eligible" : "Not Eligible";
+// }

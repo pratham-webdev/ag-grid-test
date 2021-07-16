@@ -14,7 +14,51 @@
 <body>
     <div id="mainView" class="container h-100">
     <h1 class="py-4">Sales Log</h1>
-    <button class="btn btn-outline-primary" onclick="showHide('sidepanel-filter')">Filters</button>
+    <button class="btn btn-outline-primary" onclick="exportCSV()">Export</button>
+    <button class="btn btn-outline-primary ms-2 sidepanel-filter" onclick="showHide('sidepanel-filter')">Filters</button>
+    <button class="btn btn-outline-primary ms-2 sidepanel-columns" onclick="showHide('sidepanel-columns')">Columns</button>
+
+   <!-- <div id="column-checks">
+    <div class="form-check">
+        <input id="column-0" class="form-check-input" type="checkbox" checked>
+        <label class="form-check-label">
+         Deal Date
+        </label>
+      </div>
+      <div class="form-check">
+        <input id="column-1" class="form-check-input" type="checkbox" checked>
+        <label class="form-check-label">
+          Finance Manager
+        </label>
+      </div>
+      <div class="form-check">
+        <input id="column-2" class="form-check-input" type="checkbox" checked>
+        <label class="form-check-label">
+         Sales Manager
+        </label>
+      </div>
+      <div class="form-check">
+        <input id="column-3" class="form-check-input" type="checkbox" checked>
+        <label class="form-check-label">
+        Eligible/Not Eligible
+        </label>
+      </div>
+      <div class="form-check">
+        <input id="column-4" class="form-check-input" type="checkbox" checked>
+        <label class="form-check-label">
+        Deal Reference Number
+        </label>
+      </div>
+      <div class="form-check">
+        <input id="column-5" class="form-check-input" type="checkbox" checked>
+        <label class="form-check-label">
+       Net Sale Price
+        </label>
+      </div>
+    </div> -->
+
+
+
     <!-- <button onclick="filter('Jackson Pollock','FinanceManager')">Jackson Pollock</button>
 <button onclick="filter('Jade Emerald', 'SalesManager')">Jade</button> -->
 
@@ -26,5 +70,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/filter-items.js"></script>
+    <script src="js/columns.js"></script>
 </body>
 </html>

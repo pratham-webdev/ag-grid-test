@@ -98,9 +98,11 @@ filterItems.forEach((item) => {
         $('#filter-tabs #filter-1').addClass('filter-tab-active');
     }
     $('#filter-check').append(`<div class=${item.id}></div>`);
+
     item.filters.forEach((el) => {
         $(`#filter-check .${item.id}`).append(FilterCheck(el, item.FilterCategory));
     });
+    
     item.id == 'filter-1' ? $(`.${item.id}`).show() : $(`.${item.id}`).hide();
 });
 

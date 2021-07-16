@@ -58,3 +58,7 @@
 // function parseEligibility(data) {
 //     return data.value == false ? "Eligible" : "Not Eligible";
 // }
+
+// function parseDate(data) {
+//     return data.value ? (new Date(data.value).toLocaleDateString()) : '';
+// }

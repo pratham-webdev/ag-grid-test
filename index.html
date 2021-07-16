@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +10,31 @@
     <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
     <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
     <div id="mainView" class="container h-100">
-    <h1 class="py-4">Sales Log</h1>
-    <button class="btn btn-outline-primary" onclick="exportCSV()">Export</button>
-    <button class="btn btn-outline-primary ms-2 sidepanel-filter" onclick="showHide('sidepanel-filter')">Filters</button>
-    <button class="btn btn-outline-primary ms-2 sidepanel-columns" onclick="showHide('sidepanel-columns')">Columns</button>
+        <h1 class="py-4">Sales Log</h1>
+        <div class="d-flex align-items-center">
+            <div>
+                <select class="form-select" onchange="onPageSizeChanged()" id="page-size">
+                    <option value="15" selected>15 per page</option>
+                    <option value="25">25 per page</option>
+                    <option value="50">50 per page</option>
+                </select>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary ms-2" onclick="exportCSV()">Export</button>
+                <button class="btn btn-outline-primary ms-2 sidepanel-filter"
+                    onclick="showHide('sidepanel-filter')">Filters</button>
+                <button class="btn btn-outline-primary ms-2 sidepanel-columns"
+                    onclick="showHide('sidepanel-columns')">Columns</button>
+            </div>
+        </div>
 
-   <!-- <div id="column-checks">
+        <!-- <div id="column-checks">
     <div class="form-check">
         <input id="column-0" class="form-check-input" type="checkbox" checked>
         <label class="form-check-label">
@@ -59,11 +75,11 @@
 
 
 
-    <!-- <button onclick="filter('Jackson Pollock','FinanceManager')">Jackson Pollock</button>
+        <!-- <button onclick="filter('Jackson Pollock','FinanceManager')">Jackson Pollock</button>
 <button onclick="filter('Jade Emerald', 'SalesManager')">Jade</button> -->
 
-    
-    <div id="myGrid" class="ag-theme-alpine pt-3"></div>
+
+        <div id="myGrid" class="ag-theme-alpine pt-3"></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -72,4 +88,5 @@
     <script src="js/filter-items.js"></script>
     <script src="js/columns.js"></script>
 </body>
+
 </html>

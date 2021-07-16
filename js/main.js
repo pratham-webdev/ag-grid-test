@@ -1,13 +1,11 @@
 const columnDefs = [
-    { field: "DealDate", checkboxSelection: true, valueFormatter: parseDate },
+    { field: "DealDate", checkboxSelection: true},
     { field: "FinanceManager" },
     { field: "SalesManager" },
     { headerName: 'Eligible / Not Eligible', field: "Eligibility" },
     { field: "DealReferenceNumber" },
     { field: "NetSalePrice" },
 ];
-
-var FinanceFilter = 'everyone';
 
 const eGridDiv = document.querySelector('#myGrid');
 
@@ -20,9 +18,9 @@ const gridOptions = {
         sortable: true
     },
     columnDefs: columnDefs,
-    // animateRows: true,
-    // isExternalFilterPresent: isExternalFilterPresent,
-    // doesExternalFilterPass: doesExternalFilterPass
+    pagination: true,
+    paginationPageSize:15
+    // paginationAutoPageSize:true
 };
 new agGrid.Grid(eGridDiv, gridOptions);
 if (window.innerWidth > 1200) {
@@ -83,10 +81,11 @@ function showHide(option) {
     
 }
 
-function parseDate(data) {
-    return data.value ? (new Date(data.value).toLocaleDateString()) : '';
-}
-
 function exportCSV() {
     gridOptions.api.exportDataAsCsv({fileName:'sales-log'});
+  }
+
+  function onPageSizeChanged() {
+    var value = document.getElementById('page-size').value;
+    gridOptions.api.paginationSetPageSize(Number(value));
   }

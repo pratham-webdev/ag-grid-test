@@ -55,14 +55,14 @@ if (window.innerWidth < 1200) {
     $('#columns-header').prepend(`<div class="me-3" onclick="showHide('sidepanel-columns')"><img src="img/close.svg"></div>`)
 }
 
-function hideCol() {
-    gridOptions.columnApi.applyColumnState({
-        state: [
-            { colId: 'DealReferenceNumber', hide: true },
-            { colId: 'NetSalePrice', hide: true },
-        ],
-    });
-}
+// function hideCol() {
+//     gridOptions.columnApi.applyColumnState({
+//         state: [
+//             { colId: 'DealReferenceNumber', hide: true },
+//             { colId: 'NetSalePrice', hide: true },
+//         ],
+//     });
+// }
 function resetCols() {
     gridOptions.columnApi.resetColumnState();
     $('#column-checks .form-check-input').prop('checked', true);
@@ -74,12 +74,13 @@ $('#column-checks .form-check-input').click(function () {
     // console.log(gridOptions.columnApi.getColumnState());
     let currentColState = gridOptions.columnApi.getColumnState();
     let columnPosition = Number(this.id.slice(this.id.length - 1, this.id.length));
+    // console.log(columnPosition);
     if (this.checked == false) {
-        currentColState[columnPosition].hide = true;
+        currentColState[columnPosition - 1].hide = true;
         gridOptions.columnApi.applyColumnState({ state: currentColState });
     }
     else {
-        currentColState[columnPosition].hide = false;
+        currentColState[columnPosition - 1].hide = false;
         gridOptions.columnApi.applyColumnState({ state: currentColState });
     }
 
